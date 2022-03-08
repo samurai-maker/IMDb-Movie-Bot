@@ -1,37 +1,95 @@
 class Script(object):
-    START_TXT = """Hello {},
+    START_TXT = """<b>
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
 
-My name is <a href=https://t.me/{}>{}</a>!
+   █░█░█ █░█░█ █▀▄▀█
+   ▀▄▀▄▀ ▀▄▀▄▀ █░▀░█
 
-<b>I can provide Movies. A Telegram Auto Filter Bot. Its Easy To Use Me :)
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
+</b>
+<b>Hey {}!!</b>
 
-Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
+➥<i>Am Just A filter manager 
+  Bot of </i>
+  <b>@world_wide_movies </b>
 
-    HELP_TXT = """Hey {}
+➥<i>Send the exact Movie name in 
+  our group,I'll reply the 
+  file in PM if available 
+  in our channel
+  
+  thank you ❤️..</i>
 
-<b>Here Is The Help For My Commands.</b>"""
+▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
+<i>For More Details Click Help 
+Button Below..  </i> 
+▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
+"""
 
-    ABOUT_TXT = """<b>➥ My name: {}
-➥ Creator: <a href='https://t.me/zautekm'>Zaute Km</a>
-➥ Library: <a href='https://docs.pyrogram.org/'>Pyrogram</a>
-➥ Language: Python 𝟹
-➥ Data Base: <a href='https://www.mongodb.com/'>MongoDB</a>
-➥ Bot Server: <a href='https://heroku.com'>Heroku</a>
-➥ Build Status: v2.0.1 [ Beta ]"""
+    HELP_TXT = """
+<b>
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
 
-    SOURCE_TXT = """<b>Source:</b>
-IMDb is a Open source project.
-Source: <a href='https://github.com/josprojects/tgmoviebot'>GitHub - Click here 👈</a>
+   █░█░█ █░█░█ █▀▄▀█
+   ▀▄▀▄▀ ▀▄▀▄▀ █░▀░█
+
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
+
+</b>
+    
+Hey {}
+
+<b>Here Is The Help For My Commands.</b>
+<b>~@world_wide_movies <b>
+
+"""
+
+    ABOUT_TXT = """<b>
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
+
+   █░█░█ █░█░█ █▀▄▀█
+   ▀▄▀▄▀ ▀▄▀▄▀ █░▀░█
+
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
+
+</b>
+
+<b>➥ Name</b> : <code> Auto Filter Bot</code>
+<b>➥ Creator</b> : <b><i><a href="https://github.com/DevAXD">DevAXD</a></i></b>
+<b>➥ Language</b> : <code>Python3</code>
+<b>➥ Library</b> : <i><a href="https://docs.pyrogram.org">Pyrogram Asyncio 1.13.0 </a></i>
+<b>➥ Source Code</b> : <i><a href="https://github.com/DevAXD/fiLTER">Click Me</a></i>
+"""
+
+    SOURCE_TXT = """
+ <b>
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
+
+   █░█░█ █░█░█ █▀▄▀█
+   ▀▄▀▄▀ ▀▄▀▄▀ █░▀░█
+
+╔══╦══╦══╦══╦══╦══╦══╗
+╚══╩══╩══╩══╩══╩══╩══╝
+
+</b>   
+ <b>Source:</b><i>Private Repo</i>
 
 <b>DEVS:</b>
-- <a href='https://t.me/josprojects'>Jos Projects</a>
+- <a href='https://t.me/slogan_98'>DevAXD</a>
 
-<b>SUPPORT GROUP</b>
-- <a href='https://t.me/+y53tWFUw6Q43NzE9'>Jos Movie Club</a>"""
+<b>PROVIDER</b>
+- <a href='https://t.me/WORLD_WIDE_MOVIES'>WWM</a>"""
 
     MANUALFILTER_TXT = """Help: <b>Filters</b>
 
-- Filter is the feature were users can set automated replies for a particular keyword and Dingdi will respond whenever a keyword is found the message
+-<i> Filter is the feature were users can set automated replies for a particular keyword and Dingdi will respond whenever a keyword is found the message</i>
 
 <b>NOTE:</b>
 1. IMDb should have admin privillage.
@@ -42,7 +100,11 @@ Source: <a href='https://github.com/josprojects/tgmoviebot'>GitHub - Click here 
 • /filter - add a filter in chat.
 • /filters - list all the filters of a chat.
 • /del - delete a specific filter in chat.
-• /delall - delete the whole filters in a chat (chat owner only)."""
+• /delall - delete the whole filters in a chat (chat owner only).
+
+<b>~@world_wide_movies <b>
+
+"""
 
     BUTTON_TXT = """Help: <b>Buttons</b>
 
@@ -54,7 +116,7 @@ Source: <a href='https://github.com/josprojects/tgmoviebot'>GitHub - Click here 
 3. Buttons should be properly parsed as markdown format.
 
 <b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/josprojects)</code>
+<code>[Button Text](buttonurl:https://t.me/slogan_98)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
@@ -278,8 +340,7 @@ Some URLs is Shortner
 <b>Commands and Usage:</b>
 • /short <code>(link)</code> - I will send the shorted links.
 
-<b>Example:</b>
-<code>/short https://t.me/josprojects</code>
+
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
