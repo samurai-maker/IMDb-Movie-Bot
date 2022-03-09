@@ -114,12 +114,6 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
-    btn.insert(0,
-            [
-                InlineKeyboardButton("⭕️ Movie", url="https://t.me/world_wide_movies"),
-                InlineKeyboardButton("Series ⭕️", url="https://t.me/wwm_series")
-            ])
-
     btn.insert(0, [
         InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
     ])
@@ -381,14 +375,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{files.file_name}"
         buttons = [
-            [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/slogan_98'),
-                InlineKeyboardButton('repo ⭕️', url='https://www.google.com/search?q=ente+kayyil+onnula')
-            ],
-            [
-                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/world_wide_movies')
+                InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
             ]
-            ]
+            
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -435,14 +424,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         buttons = [
-            [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/slogan_98'),
-                InlineKeyboardButton('repo ⭕️', url='https://www.google.com/search?q=ente+kayyil+onnula')
-            ],
-            [
-                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/world_wide_movies')
+                InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
             ]
-            ]
+            
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -455,17 +439,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add me to your Chat ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('Help ⚙️ ', callback_data='help'),
+            InlineKeyboardButton('About ❔', callback_data='about')
             ],[
-            InlineKeyboardButton('⭕️ Help', callback_data='help'),
-            InlineKeyboardButton('About ⭕️', callback_data='about')
-            ],[
-            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('⭕️ Updates', url='https://t.me/slogan_98'),
-            InlineKeyboardButton('Movie Club ⭕️', url='https://t.me/world_wide_movies')
-            ],[
-            InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
+                InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
+            ]
+            ,[
+            InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -513,10 +493,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('⭕ Status', url='https://t.me/slogan_98/47'),
-            InlineKeyboardButton('Source 🪤', callback_data='source')
+            InlineKeyboardButton('♻️ Status', url='https://t.me/slogan_98/47'),
+            InlineKeyboardButton('📁 Source', callback_data='source')
             ],[
-            InlineKeyboardButton('❓ How to Use ❓', callback_data='help')
+            InlineKeyboardButton('📋 How to Use? ', callback_data='help')
             ],[
             InlineKeyboardButton('« Back', callback_data='start'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
@@ -937,13 +917,7 @@ async def auto_filter(client, msg, spoll=False):
              InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}")]
         )
 
-    btn.insert(0, [
-        InlineKeyboardButton("⭕️ Movie", url="https://t.me/world_wide_movies"),
-        InlineKeyboardButton("Series ⭕️", url="https://t.me/wwm_series")
-    ])
-    btn.insert(0, [
-        InlineKeyboardButton("⭕️ Join Our Channel ⭕️",url="https://t.me/+YpevrZgGQoQ5YmY1")
-    ])
+ 
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -980,7 +954,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🎬 Title:</b> <a href={url}>{title}</a> [{year}] —<b>{kind}</b>\n\n<b>📆 Release:</b> <a href={url}/releaseinfo>{release_date}</a>\n<b>🌟 Rating:</b> <a href={url}/ratings>{rating} / 10</a>\n(based on <code>{votes}</code> user ratings.)\n\n<b>🎭 Genres:</b> #{genres}\n<b>📀 Runtime:</b> <code>{runtime} minutes</code>\n\n<b>☀️ Languages:</b> #{languages}\n\n<b>നിങ്ങൾ ഉദ്ദേശിച്ച അതെ മൂവി ആകണം എന്നില്ല പോസ്റ്ററിൽ ദൃശ്യമാവുന്നത്.താഴെയുള്ള ബട്ടണുകളിൽ നിന്ന് മൂവി നെയിം, ഇയർ, സൈസ് എന്നിവ നോക്കി തിരഞ്ഞെടുക്കുക.</b>\n<b>✍️ Note:</b> <s>This message will be Auto-deleted after 10 hours to avoid copyright issues.</s>"
+        cap = f"<b>🎬 Title:</b> <a href={url}>{title}</a> [{year}] —<b>{kind}</b>\n\n<b>📆 Release:</b> <a href={url}/releaseinfo>{release_date}</a>\n<b>🌟 Rating:</b> <a href={url}/ratings>{rating} / 10</a>\n(based on <code>{votes}</code> user ratings.)\n\n<b>🎭 Genres:</b> #{genres}\n<b>📀 Runtime:</b> <code>{runtime} minutes</code>\n\n<b>☀️ Languages:</b> #{languages}\n\n<b>നിങ്ങൾ ഉദ്ദേശിച്ച അതെ മൂവി ആകണം എന്നില്ല പോസ്റ്ററിൽ ദൃശ്യമാവുന്നത്.താഴെയുള്ള ബട്ടണുകളിൽ നിന്ന് മൂവി നെയിം, ഇയർ, സൈസ് എന്നിവ നോക്കി തിരഞ്ഞെടുക്കുക.</b>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
@@ -1050,11 +1024,11 @@ async def advantage_spell_chok(msg):
     if not movielist:
         button = InlineKeyboardMarkup(
         [[
-           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q={search}")
+           InlineKeyboardButton("🌎 Google ", url=f"https://www.google.com/search?q={search}")
         ],
         [
-           InlineKeyboardButton("⭕️ IMDb", url=f"https://www.imdb.com/find?q={search}"),
-           InlineKeyboardButton("Wikipedia ⭕️", url=f"https://en.m.wikipedia.org/w/index.php?search={search}")
+           InlineKeyboardButton("🎟 IMDb", url=f"https://www.imdb.com/find?q={search}"),
+           InlineKeyboardButton("📖 Wikipedia ", url=f"https://en.m.wikipedia.org/w/index.php?search={search}")
         ]])
         k = await msg.reply(f"Hey, Your word <b>{search}</b> is No Movie/Series Related to the Given Word Was Found 🥺\n\n<s>Please Go to Google and Confirm the Correct Spelling 🥺🙏</s>", reply_markup=button)
         await asyncio.sleep(60)
