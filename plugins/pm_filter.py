@@ -374,9 +374,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        buttons = [
+        buttons =[ [
                 InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
-            ]
+            ]]
             
 
         try:
@@ -423,9 +423,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
-        buttons = [
+        buttons =[ [
                 InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
-            ]
+            ]]
             
         await query.answer()
         await client.send_cached_media(
