@@ -9,23 +9,12 @@ class Script(object):
 ╔══╦══╦══╦══╦══╦══╦══╗
 ╚══╩══╩══╩══╩══╩══╩══╝
 </b>
-<b>Hey {}!!</b>
+<b>ഹായ് {}!!</b>
 
-➥<i>Am Just A filter manager 
-  Bot of </i>
-  <b>@world_wide_movies </b>
+➥<i>ഞാൻ @world_wide_movie ഗ്രൂപ്പിന്റെ  പാവം ഒരു ഫിൽറ്റർ ബോട്ട്.</i>
 
-➥<i>Send the exact Movie name in 
-  our group,I'll reply the 
-  file in PM if available 
-  in our channel
-  
-  thank you ❤️..</i>
+➥<b>  ഗ്രൂപ്പിൽ അയക്കുന്ന റിക്വസ്റ്റ്കൾക്ക് റിപ്ലൈ വരുന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്ത് എന്റെ ചാറ്റ് ബോക്സിൽ വന്നാൽ ഞാൻ  നിനക്കു മൂവി തരാം </b>
 
-▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
-<i>For More Details Click Help 
-Button Below..  </i> 
-▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
 """
 
     HELP_TXT = """
@@ -48,18 +37,7 @@ Hey {}
 
 """
 
-    ABOUT_TXT = """<b>
-╔══╦══╦══╦══╦══╦══╦══╗
-╚══╩══╩══╩══╩══╩══╩══╝
-
-   █░█░█ █░█░█ █▀▄▀█
-   ▀▄▀▄▀ ▀▄▀▄▀ █░▀░█
-
-╔══╦══╦══╦══╦══╦══╦══╗
-╚══╩══╩══╩══╩══╩══╩══╝
-
-</b>
-
+    ABOUT_TXT = """
 <b>➥ Name</b> : <code> Auto Filter Bot</code>
 <b>➥ Creator</b> : <b><i><a href="https://github.com/DevAXD">DevAXD</a></i></b>
 <b>➥ Language</b> : <code>Python3</code>
@@ -68,24 +46,9 @@ Hey {}
 """
 
     SOURCE_TXT = """
- <b>
-╔══╦══╦══╦══╦══╦══╦══╗
-╚══╩══╩══╩══╩══╩══╩══╝
-
-   █░█░█ █░█░█ █▀▄▀█
-   ▀▄▀▄▀ ▀▄▀▄▀ █░▀░█
-
-╔══╦══╦══╦══╦══╦══╦══╗
-╚══╩══╩══╩══╩══╩══╩══╝
-
-</b>   
- <b>Source:</b><i>Private Repo</i>
-
-<b>DEVS:</b>
-- <a href='https://t.me/slogan_98'>DevAXD</a>
-
+ 
 <b>PROVIDER</b>
-- <a href='https://t.me/WORLD_WIDE_MOVIES'>WWM</a>"""
+- <a href='https://t.me/WORLD_WIDE_MOVIES'>WORLD WIDE MOVIES</a>"""
 
     MANUALFILTER_TXT = """Help: <b>Filters</b>
 
@@ -108,7 +71,7 @@ Hey {}
 
     BUTTON_TXT = """Help: <b>Buttons</b>
 
-- tgmoviebot support both url and alert inline buttons.
+- Bot support both url and alert inline buttons.
 
 <b>NOTE:</b>
 1. Telegram will not allows you to send buttons without any content, so content is mandatory.
@@ -116,7 +79,7 @@ Hey {}
 3. Buttons should be properly parsed as markdown format.
 
 <b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/slogan_98)</code>
+<code>[Button Text](buttonurl:https://t.me/world_wide_movies)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
@@ -311,11 +274,10 @@ This module only works for my admins
 <b>Used Storage:</b> <code>{}</code> MiB
 <b>Free Storage:</b> <code>{}</code> MiB"""
 
-    FORCESUB_TXT = """**♦️ READ THIS INSTRUCTION ♦️**
+    FORCESUB_TXT = """
 
-__🗣 In Order To Get The Movie Requested By You in Our Groups, You Will Have To Join Our Official Channel First. After That, Try Accessing That Movie Again From Our Group. I'll Send You That Movie Privately 🙈__
-
-**👇 JOIN THIS CHANNEL & TRY AGAIN 👇**"""
+എന്റെ സേവനം ലഭ്യമാക്കാൻ ഈ ചാനലിൽ ജോയിൻ ചെയ്യുക
+"""
 
     MEMES_TXT = """Help: <b>Memes</b>
 
@@ -369,7 +331,6 @@ Music download modules, for those who love music.
 
 <b>YouTube Thumbnail Download</b>
 • /ytthumb (youtube link)
-<b>Example:</b> <code>/ytthumb https://youtu.be/h6PtzFYaMxQ</code>
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
