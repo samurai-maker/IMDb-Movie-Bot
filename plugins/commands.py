@@ -21,15 +21,15 @@ BATCH_FILES = {}
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
-        buttons = [
-            [
-                InlineKeyboardButton('⭕️ Updates ⭕️', url='https://t.me/slogan_98')
-            ],
-            [
-                InlineKeyboardButton('🛠️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-                InlineKeyboardButton('Close ✗', callback_data="close_data"),
+        buttons = [[
+            InlineKeyboardButton('Help ⚙️ ', callback_data='help'),
+            InlineKeyboardButton('About ❔', callback_data='about')
+            ],[
+                InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
             ]
-            ]
+            ,[
+            InlineKeyboardButton('Close ✗', callback_data='close_data')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_sticker(chat_id=message.chat.id, sticker='CAACAgUAAxkBAAJ1k2IfDr7l8Hat1d-s1mnbBEsFXZWJAAL5BAACAdz5VOVw2x38ZZJ1HgQ', reply_markup=reply_markup, reply_to_message_id=message.message_id)
         await asyncio.sleep(60)
@@ -43,17 +43,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, Script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕ Add me to your Chat ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('Help ⚙️ ', callback_data='help'),
+            InlineKeyboardButton('About ❔', callback_data='about')
             ],[
-            InlineKeyboardButton('⭕️ Help', callback_data='help'),
-            InlineKeyboardButton('About ⭕️', callback_data='about')
-            ],[
-            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('⭕️ Updates', url='https://t.me/slogan_98'),
-            InlineKeyboardButton('Movie Club ⭕️', url='https://t.me/world_wide_movies')
-            ],[
-            InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
+                InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
+            ]
+            ,[
+            InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -91,17 +87,13 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('➕ Add me to your Chat ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('Help ⚙️ ', callback_data='help'),
+            InlineKeyboardButton('About ❔', callback_data='about')
             ],[
-            InlineKeyboardButton('⭕️ Help', callback_data='help'),
-            InlineKeyboardButton('About ⭕️', callback_data='about')
-            ],[
-            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('⭕️ Updates', url='https://t.me/slogan_98'),
-            InlineKeyboardButton('Movie Club ⭕️', url='https://t.me/world_wide_movies')
-            ],[
-            InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
+                InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
+            ]
+            ,[
+            InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -249,14 +241,8 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
     buttons = [
-        [
-            InlineKeyboardButton('⭕️ Support', url='https://t.me/slogan_98'),
-            InlineKeyboardButton('Repo ⭕️', url='https://www.google.com/search?q=ente+kayyil+onnula')
-        ],
-        [
-            InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/world_wide_movies')
-        ]
-        ]
+                InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
+            ]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
