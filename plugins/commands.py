@@ -26,7 +26,10 @@ async def start(client, message):
             InlineKeyboardButton('About ❔', callback_data='about')
             ],[
                 InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
-            ]
+            ],
+            [
+            InlineKeyboardButton('Donate 💰', callback_data='close_data')
+            ],
             ,[
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
@@ -91,7 +94,10 @@ async def start(client, message):
             InlineKeyboardButton('About ❔', callback_data='about')
             ],[
                 InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
-            ]
+            ],
+            [
+            InlineKeyboardButton('Donate 💰', callback_data='close_data')
+            ],
             ,[
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
