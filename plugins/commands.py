@@ -26,8 +26,8 @@ async def start(client, message):
             InlineKeyboardButton('About ❔', callback_data='about')
             ],[
                 InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
-            ]
-            ,[
+            ],
+            [
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -47,8 +47,8 @@ async def start(client, message):
             InlineKeyboardButton('About ❔', callback_data='about')
             ],[
                 InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
-            ]
-            ,[
+            ],
+            [
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -86,16 +86,13 @@ async def start(client, message):
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-        buttons = [[
+        buttons =[[
             InlineKeyboardButton('Help ⚙️ ', callback_data='help'),
             InlineKeyboardButton('About ❔', callback_data='about')
             ],[
                 InlineKeyboardButton('movie request here 📲', url=f'https://t.me/world_wide_movies')
             ],
             [
-            InlineKeyboardButton('Donate 💰', callback_data='close_data')
-            ],
-            ,[
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
