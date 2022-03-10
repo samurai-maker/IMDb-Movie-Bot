@@ -497,7 +497,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📁 Source', callback_data='source')
             ],[
             InlineKeyboardButton('📋 How to Use? ', callback_data='help')
-            ],[
+            ], [
+            InlineKeyboardButton('Donate 💰', url='https://www.buymeacoffee.com/Devaxd')
+            ],
+            
+            
+            [
             InlineKeyboardButton('« Back', callback_data='start'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
