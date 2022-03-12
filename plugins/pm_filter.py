@@ -497,9 +497,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📁 Source', callback_data='source')
             ],[
             InlineKeyboardButton('📋 How to Use? ', callback_data='help')
-            ], [
-            InlineKeyboardButton('Donate 💰', url='https://www.buymeacoffee.com/Devaxd')
-            ],
+            ], 
             
             
             [
@@ -959,7 +957,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🎬 Title:</b> <a href={url}>{title}</a> [{year}] —<b>{kind}</b>\n\n<b>📆 Release:</b> <a href={url}/releaseinfo>{release_date}</a>\n<b>🌟 Rating:</b> <a href={url}/ratings>{rating} / 10</a>\n(based on <code>{votes}</code> user ratings.)\n\n<b>🎭 Genres:</b> #{genres}\n<b>📀 Runtime:</b> <code>{runtime} minutes</code>\n\n<b>☀️ Languages:</b> #{languages}\n<b>🌎 Country of Origin:</b> #{countries}\n\n<b>നിങ്ങൾ ഉദ്ദേശിച്ച അതെ മൂവി ആകണം എന്നില്ല പോസ്റ്ററിൽ ദൃശ്യമാവുന്നത്.താഴെയുള്ള ബട്ടണുകളിൽ നിന്ന് മൂവി നെയിം, ഇയർ, സൈസ് എന്നിവ നോക്കി തിരഞ്ഞെടുക്കുക.</b> "
+        cap = f"<b>🎬 Title:</b> <a href={url}>{title}</a> [{year}] —<b>{kind}</b>\n\n<b>📆 Release:</b> <a href={url}/releaseinfo>{release_date}</a>\n<b>🌟 Rating:</b> <a href={url}/ratings>{rating} / 10</a>\n(based on <code>{votes}</code> user ratings.)\n\n<b>🎭 Genres:</b> #{genres}\n<b>📀 Runtime:</b> <code>{runtime} minutes</code>\n\n<b>☀️ Languages:</b> #{languages}\n<b>🌎 Country of Origin:</b> #{countries} "
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
